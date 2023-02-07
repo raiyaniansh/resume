@@ -1,16 +1,19 @@
 import 'dart:io';
-import 'package:flutter/material.dart';
-import 'package:resume/ex.dart';
-import 'package:resume/modal.dart';
+import 'dart:math';
 
-class Resume1 extends StatefulWidget {
-  const Resume1({Key? key}) : super(key: key);
+import 'package:flutter/material.dart';
+import 'package:resume/ex5.dart';
+
+import 'modal.dart';
+
+class Resume5 extends StatefulWidget {
+  const Resume5({Key? key}) : super(key: key);
 
   @override
-  State<Resume1> createState() => _Resume1State();
+  State<Resume5> createState() => _Resume5State();
 }
 
-class _Resume1State extends State<Resume1> {
+class _Resume5State extends State<Resume5> {
   @override
   Widget build(BuildContext context) {
     Modal data = ModalRoute.of(context)!.settings.arguments as Modal;
@@ -32,7 +35,7 @@ class _Resume1State extends State<Resume1> {
                     Container(
                       width: 145,
                       height: 509,
-                      color: Colors.black,
+                      color: Color(0xff283643),
                       child: Padding(
                         padding: const EdgeInsets.all(10),
                         child: Column(
@@ -41,9 +44,12 @@ class _Resume1State extends State<Resume1> {
                             SizedBox(
                               height: 10,
                             ),
-                            CircleAvatar(
-                              backgroundImage: FileImage(File(data.img!)),
-                              maxRadius: 55,
+                            Container(
+                              decoration: BoxDecoration(border: Border.all(color: Colors.white,width: 1),shape: BoxShape.circle),
+                              child: CircleAvatar(
+                                backgroundImage: FileImage(File(data.img!)),
+                                maxRadius: 55,
+                              ),
                             ),
                             SizedBox(
                               height: 20,
@@ -56,11 +62,11 @@ class _Resume1State extends State<Resume1> {
                                   letterSpacing: 1),
                             ),
                             SizedBox(
-                              height: 1,
+                              height: 3,
                             ),
                             Container(
                               height: 1,
-                              width: 100,
+                              width: 20,
                               color: Colors.white,
                             ),
                             SizedBox(
@@ -104,8 +110,14 @@ class _Resume1State extends State<Resume1> {
                               ],
                             ),
                             SizedBox(
-                              height: 20,
+                              height: 10,
                             ),
+                            Container(
+                              width: double.infinity,
+                              height: 1,
+                              color: Colors.white,
+                            ),
+                            SizedBox(height: 10,),
                             Text(
                               "SKILLS",
                               style: TextStyle(
@@ -114,11 +126,11 @@ class _Resume1State extends State<Resume1> {
                                   letterSpacing: 1),
                             ),
                             SizedBox(
-                              height: 1,
+                              height: 3,
                             ),
                             Container(
                               height: 1,
-                              width: 100,
+                              width: 20,
                               color: Colors.white,
                             ),
                             SizedBox(
@@ -135,8 +147,9 @@ class _Resume1State extends State<Resume1> {
                                   "${data.prl} %",
                                   style: TextStyle(color: Colors.white),
                                 ),
+
                               ],
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -148,37 +161,66 @@ class _Resume1State extends State<Resume1> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Container(
-                            height: 60,
-                            width: 200,
-                            decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(50),
-                                  bottomRight: Radius.circular(50)),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "${data.fn} ${data.ln}",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                        fontSize: 25,
-                                        letterSpacing: 2,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Text(
-                                    "${data.profession}",
-                                    style: TextStyle(color: Colors.white,fontSize: 18),
-                                  ),
-                                ],
+                          Align(
+                            alignment: Alignment.topRight,
+                            child: Container(
+                              height: 130,
+                              width: 205,
+                              color: Color(0xffEBECEE),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          height: 1,
+                                          width: 30,
+                                          color: Colors.black54,
+                                        ),
+                                        SizedBox(width: 3,),
+                                        Transform.rotate(
+                                          angle: pi/4,
+                                          child: Container(
+                                            height: 20,
+                                            width: 20,
+                                            decoration: BoxDecoration(
+                                              border: Border.all(color: Colors.black54,strokeAlign: StrokeAlign.inside)
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(width: 3,),
+                                        Container(
+                                          height: 1,
+                                          width: 30,
+                                          color: Colors.black54,
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(height: 5,),
+                                    Text(
+                                      "${data.fn} ${data.ln}",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 25,
+                                          letterSpacing: 2,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    SizedBox(height: 3,),
+                                    Container(
+                                      width: 120,
+                                      height: 1,
+                                      color: Colors.black54,
+                                    ),
+                                    SizedBox(height: 3,),
+                                    Text(
+                                      "${data.profession}",
+                                      style: TextStyle(color: Colors.black54,fontSize: 18,letterSpacing: 2),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -193,7 +235,7 @@ class _Resume1State extends State<Resume1> {
                                 Text(
                                   "PROFILE",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Color(0xff283643),
                                       fontWeight: FontWeight.w700,
                                       letterSpacing: 1),
                                 ),
@@ -202,17 +244,22 @@ class _Resume1State extends State<Resume1> {
                                 ),
                                 Container(
                                   height: 1,
-                                  width: 100,
-                                  color: Colors.black,
+                                  width: 20,
+                                  color: Color(0xff283643),
                                 ),
-                                Text("${data.ab}"),
+                                SizedBox(height: 5,),
+                                Text("${data.ab}",style: TextStyle(color: Color(0xff283643),fontSize: 15)),
                                 SizedBox(
-                                  height: 20,
+                                  height: 10,
+                                ),
+                                Container(height: 1,width: double.infinity,color: Colors.black26,),
+                                SizedBox(
+                                  height: 10,
                                 ),
                                 Text(
                                   "EXPERIENCE",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Color(0xff283643),
                                       fontWeight: FontWeight.w700,
                                       letterSpacing: 1),
                                 ),
@@ -221,111 +268,66 @@ class _Resume1State extends State<Resume1> {
                                 ),
                                 Container(
                                   height: 1,
-                                  width: 100,
-                                  color: Colors.black,
+                                  width: 20,
+                                  color: Color(0xff283643),
                                 ),
-                            Container(
-                              child: Row(
-                                children: [
-                                  Column(
-                                    children: [
-                                      SizedBox(
-                                        height: 5,
-                                      ),
-                                      Container(
-                                        height: 5,
-                                        width: 5,
-                                        decoration: BoxDecoration(
-                                          color: Colors.black,
-                                          shape: BoxShape.circle,
-                                        ),
-                                      ),
-                                      Container(
-                                        height: 60,
-                                        width: 1,
-                                        decoration: BoxDecoration(
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    width: 5,
-                                  ),
-                                  Column(
+                                SizedBox(height: 5,),
+                                Container(
+                                  child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Text("${data.com}",
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w600)),
-                                      Text("${data.pos}", style: TextStyle(color: Colors.black, fontSize: 18)),
-                                      Text("${data.ex}", style: TextStyle(color: Colors.black, fontSize: 18)),
-                                      Text("${data.loc}", style: TextStyle(color: Colors.black, fontSize: 18)),
+                                      Row(
+                                        children: [
+                                          Text("${data.com}",style: TextStyle(color: Color(0xff283643), fontSize: 16, fontWeight: FontWeight.w600)),
+                                          Expanded(child: SizedBox(width: 1,)),
+                                          Text("${data.ex}", style: TextStyle(color: Colors.black54, fontSize: 14)),
+                                        ],
+                                      ),
+                                      Text("${data.pos}", style: TextStyle(color: Colors.black54, fontSize: 14)),
+                                      Text("${data.loc}", style: TextStyle(color: Colors.black54, fontSize: 14)),
+                                      SizedBox(height: 5,),
                                     ],
                                   ),
-                                ],
-                              ),
-                            ),
+                                ),
                                 SizedBox(
-                                  height: 20,
+                                  height: 5,
+                                ),
+                                Container(height: 1,width: double.infinity,color: Colors.black26,),
+                                SizedBox(
+                                  height: 10,
                                 ),
                                 Text(
                                   "EDUCATION",
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Color(0xff283643),
                                       fontWeight: FontWeight.w700,
                                       letterSpacing: 1),
                                 ),
                                 Container(
                                   height: 1,
-                                  width: 100,
-                                  color: Colors.black,
+                                  width: 20,
+                                  color: Color(0xff283643),
                                 ),
+                                SizedBox(height: 5,),
                                 Container(
-                                  child: Row(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Column(
-                                        children: [
-                                          SizedBox(
-                                            height: 5,
-                                          ),
-                                          Container(
-                                            height: 5,
-                                            width: 5,
-                                            decoration: BoxDecoration(
-                                              color: Colors.black,
-                                              shape: BoxShape.circle,
-                                            ),
-                                          ),
-                                          Container(
-                                            height: 50,
-                                            width: 1,
-                                            decoration: BoxDecoration(
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                      Row(
                                         children: [
                                           Text("${data.scl}",
                                               style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 20,
+                                                  color: Color(0xff283643),
+                                                  fontSize: 16,
                                                   fontWeight: FontWeight.w500)),
-                                          Text("${data.degree}", style: TextStyle(color: Colors.black, fontSize: 20)),
-                                          Text("${data.ps}", style: TextStyle(color: Colors.black, fontSize: 20)),
                                         ],
                                       ),
+                                      Text("${data.degree}", style: TextStyle(color: Colors.black54, fontSize: 14)),
+                                      Text("${data.ps}", style: TextStyle(color: Colors.black54, fontSize: 14)),
+                                      SizedBox(height: 5,),
                                     ],
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
@@ -337,9 +339,9 @@ class _Resume1State extends State<Resume1> {
             SizedBox(height: 50,),
             InkWell(
               onTap: (){
-                resume1(data);
+                resume5(data);
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text("Download sucessfully..."))
+                    SnackBar(content: Text("Download sucessfully..."))
                 );
               },
               child: Container(
@@ -347,8 +349,8 @@ class _Resume1State extends State<Resume1> {
                 width: 125,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: Color(0xff4CB050),
-                  borderRadius: BorderRadius.circular(10)
+                    color: Color(0xff4CB050),
+                    borderRadius: BorderRadius.circular(10)
                 ),
                 child: Text("Save",style: TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.bold)),
               ),
