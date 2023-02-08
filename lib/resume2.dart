@@ -165,28 +165,24 @@ class _Resume2State extends State<Resume2> {
                           SizedBox(
                             height: 35,
                           ),
-                          Container(
-                            height: 60,
-                            width: 200,
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "${data.fn} ${data.ln}",
-                                    style: TextStyle(
-                                        fontSize: 25,
-                                        letterSpacing: 2,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Text(
-                                    "${data.profession}",
-                                    style: TextStyle(fontSize: 18),
-                                  ),
-                                ],
-                              ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "${data.fn} ${data.ln}",
+                                  style: TextStyle(
+                                      fontSize: 25,
+                                      letterSpacing: 2,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  "${data.profession}",
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                              ],
                             ),
                           ),
                           Padding(

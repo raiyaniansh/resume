@@ -320,10 +320,9 @@ class _HomescreenState extends State<Homescreen> {
                     focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xffEEEEEE)),borderRadius: BorderRadius.circular(8)),
                     filled: true,
                     fillColor: Color(0xffEEEEEE),
-                    label: Text(
-                      "eg John",
-                      style: TextStyle(color: Colors.black45, fontSize: 15),
-                    )),
+                  hintText: "eg John",
+                  hintStyle: TextStyle(color: Colors.black45, fontSize: 15),
+                ),
                 validator: (value) {
                   if(value!.isEmpty)
                     {
@@ -364,10 +363,9 @@ class _HomescreenState extends State<Homescreen> {
                     ),
                     filled: true,
                     fillColor: Color(0xffEEEEEE),
-                    label: Text(
-                      "eg Doe",
-                      style: TextStyle(color: Colors.black45, fontSize: 15),
-                    )),
+                  hintText: "eg Doe",
+                  hintStyle: TextStyle(color: Colors.black45, fontSize: 15),
+                ),
                 validator: (value) {
                   if(value!.isEmpty)
                   {
@@ -409,10 +407,9 @@ class _HomescreenState extends State<Homescreen> {
                     ),
                     filled: true,
                     fillColor: Color(0xffEEEEEE),
-                    label: Text(
-                      "eg johndoe@gmail.com",
-                      style: TextStyle(color: Colors.black45, fontSize: 15),
-                    )),
+                  hintText: "eg johndoe@gmail.com",
+                  hintStyle: TextStyle(color: Colors.black45, fontSize: 15),
+                ),
                 validator: (value) {
                   if(value!.isEmpty)
                   {
@@ -454,10 +451,9 @@ class _HomescreenState extends State<Homescreen> {
                     ),
                     filled: true,
                     fillColor: Color(0xffEEEEEE),
-                    label: Text(
-                      "eg +91 12345 95652",
-                      style: TextStyle(color: Colors.black45, fontSize: 15),
-                    )),
+                  hintText: "eg +91 12345 95652",
+                  hintStyle: TextStyle(color: Colors.black45, fontSize: 15),
+                ),
                 validator: (value) {
                   if(value!.length!=10)
                   {
@@ -498,10 +494,9 @@ class _HomescreenState extends State<Homescreen> {
                     ),
                     filled: true,
                     fillColor: Color(0xffEEEEEE),
-                    label: Text(
-                      "eg Developer",
-                      style: TextStyle(color: Colors.black45, fontSize: 15),
-                    )),
+                  hintText: "eg Developer",
+                  hintStyle: TextStyle(color: Colors.black45, fontSize: 15),
+                ),
                 validator: (value) {
                   if(value!.isEmpty)
                   {
@@ -975,10 +970,9 @@ class _HomescreenState extends State<Homescreen> {
                         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xffEEEEEE)),borderRadius: BorderRadius.circular(8)),
                         filled: true,
                         fillColor: Color(0xffEEEEEE),
-                        label: Text(
-                          "eg Softwear developer",
-                          style: TextStyle(color: Colors.black45, fontSize: 15),
-                        )),
+                      hintText: "eg Softwear developer",
+                      hintStyle: TextStyle(color: Colors.black45, fontSize: 15),
+                    ),
                     validator: (value) {
                       if(value!.isEmpty)
                       {
@@ -1010,10 +1004,9 @@ class _HomescreenState extends State<Homescreen> {
                         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xffEEEEEE)),borderRadius: BorderRadius.circular(8)),
                         filled: true,
                         fillColor: Color(0xffEEEEEE),
-                        label: Text(
-                          "Surat",
-                          style: TextStyle(color: Colors.black45, fontSize: 15),
-                        )),
+                        hintText: "eg Surat",
+                        hintStyle: TextStyle(color: Colors.black45, fontSize: 15),
+                    ),
                     validator: (value) {
                       if(value!.isEmpty)
                       {

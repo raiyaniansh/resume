@@ -152,7 +152,7 @@ class _Resume1State extends State<Resume1> {
                             height: 25,
                           ),
                           Container(
-                            height: 60,
+                            height: 68,
                             width: 200,
                             decoration: BoxDecoration(
                               color: Colors.black,
